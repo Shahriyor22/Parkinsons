@@ -18,8 +18,8 @@ st.set_page_config(page_title='Parkinson\'s Disease Detection',
                    layout='wide',
                    initial_sidebar_state='auto')
 
-loaded_model = pickle.load(open('D:/Shaxriyor/Parkinsons/trained_model.sav', 'rb'))
-dataset = pd.read_csv('D:/Shaxriyor/Parkinsons/parkinsons.csv')
+loaded_model = pickle.load(open('trained_model.sav', 'rb'))
+dataset = pd.read_csv('parkinsons.csv')
 scaler = StandardScaler()
 dataset_scaled = scaler.fit_transform(dataset.drop(['name','status'], axis=1))
 score = loaded_model.score(dataset_scaled, dataset['status'])
@@ -58,9 +58,9 @@ def add_bg_from_local(image_file):
 if (selected == "Home"):
       
     st.title('Parkinson\'s Disease Detection')
-    add_bg_from_local('D:/Shaxriyor/Parkinsons/bg.jpg')
+    add_bg_from_local('bg.jpg')
     
-    image = Image.open('D:/Shaxriyor/Parkinsons/parkinsons.jpg')
+    image = Image.open('parkinsons.jpg')
     st.image(image)
     
     st.markdown('''
