@@ -8,5 +8,4 @@ seaborn
 matplotlib
 pandas
 Pillow
-base64
 warnings
