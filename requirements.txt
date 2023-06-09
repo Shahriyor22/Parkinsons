@@ -7,3 +7,6 @@ protobuf
 seaborn
 matplotlib
 pandas
+PIL
+base64
+warnings
