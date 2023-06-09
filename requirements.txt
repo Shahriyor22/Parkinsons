@@ -7,6 +7,6 @@ protobuf
 seaborn
 matplotlib
 pandas
-PIL
+Pillow
 base64
 warnings
