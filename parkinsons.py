@@ -9,7 +9,7 @@ import base64
 from PIL import Image
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import plot_confusion_matrix
+from sklearn.metrics import ConfusionMatrixDisplay
 from sklearn.preprocessing import StandardScaler
 from streamlit_option_menu import option_menu
 
@@ -215,5 +215,5 @@ if (selected == "Visualization"):
         model = KNeighborsClassifier(n_neighbors=10)
         model.fit(X_train, Y_train)
         plt.figure(figsize=(10, 6))
-        plot_confusion_matrix(model, dataset_scaled, dataset['status'], values_format='d')
+        ConfusionMatrixDisplay.from_estimator(model, dataset_scaled, dataset['status'],  values_format='d')
         st.pyplot()
